@@ -1,0 +1,38 @@
+{
+    "name": "illuminatech/validation-composite",
+    "description": "Allows uniting several validation rules into a single one for easy re-usage",
+    "keywords": ["laravel", "validation", "rule", "composite", "combine"],
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/illuminatech/validation-composite/issues",
+        "wiki": "https://github.com/illuminatech/validation-composite/wiki",
+        "source": "https://github.com/illuminatech/validation-composite"
+    },
+    "authors": [
+        {
+            "name": "Paul Klimov",
+            "email": "klimov.paul@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5.8"
+    },
+    "require-dev": {
+        "illuminate/validation": "^5.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Illuminatech\\Validation\\Composite\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Illuminatech\\Validation\\Composite\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
