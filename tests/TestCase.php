@@ -2,16 +2,12 @@
 
 namespace Illuminatech\Validation\Composite\Test;
 
-use Illuminate\Support\Str;
 use Illuminate\Validation\Factory;
 use Illuminate\Container\Container;
-use Illuminate\Encryption\Encrypter;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Translation\FileLoader;
 use Illuminate\Translation\Translator;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Capsule\Manager;
 
 /**
  * Base class for the test cases.
@@ -41,6 +37,10 @@ class TestCase extends \PHPUnit\Framework\TestCase
         $this->app = Container::getInstance();
 
         Facade::setFacadeApplication($this->app);
+
+        $this->app->singleton('files', function () {
+            return new Filesystem;
+        });
 
         $this->app->singleton('translation.loader', function (Container $app) {
             return new FileLoader($app->make('files'), __DIR__);
