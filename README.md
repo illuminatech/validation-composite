@@ -41,7 +41,7 @@ Usage
 Same sequences of the validation rules may repeat over the application many times. For example: you may have a set of
 restrictions related to the user's password, like it should be at least 8 symbols long, but shorter then 200 to fit the
 database field reserved for its storage. Your program may also allow user to upload an image to be his avatar, but in order
-to make it safe you should validate uploaded file mime type and size.
+to make it safe, you should validate uploaded file mime type and size.
 Thus validation for the user profile form may looks like following:
 
 ```php
@@ -146,12 +146,12 @@ $validator = Validator::make(
 );
 
 if ($validator->fails()) {
-    echo $validator->errors()->first('password'); // outputs 'The password must be at least 6 characters.'
+    echo $validator->errors()->first('password'); // outputs 'The password must be at least 8 characters.'
 }
 ```
 
 > Note: do not use rules like 'sometimes', 'required', 'required_with', 'required_without' and so on in the composite rule.
-  These are processed at the different validation level will have no effect or may behave unexpectedly. 
+  These are processed at the different validation level and thus will have no effect or may behave unexpectedly. 
 
 You may define composite validation rules using [validation factory extensions](https://laravel.com/docs/5.8/validation#using-extensions) feature.
 For such case you may use `Illuminatech\Validation\Composite\DynamicCompositeRule`. For example:
