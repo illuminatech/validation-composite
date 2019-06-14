@@ -19,6 +19,32 @@ use Illuminate\Contracts\Validation\Factory;
  * ```
  *
  * This rule make sense you wish to extend list of string rules identifiers at service provider level.
+ * For example:
+ *
+ * ```php
+ *
+ * namespace App\Providers;
+ *
+ * use Illuminate\Support\ServiceProvider;
+ * use Illuminate\Contracts\Validation\Factory;
+ * use Illuminatech\Validation\Composite\DynamicCompositeRule;
+ *
+ * class AppServiceProvider extends ServiceProvider
+ * {
+ *     public function boot()
+ *     {
+ *         $this->app->extend('validator', function (Factory $validatorFactory) {
+ *             $validatorFactory->extend('password', function ($attribute, $value) {
+ *                 return (new DynamicCompositeRule(['string', 'min:8', 'max:200']))->passes($attribute, $value);
+ *             });
+ *
+ *             return $validatorFactory;
+ *         });
+ *
+ *         // ...
+ *     }
+ * }
+ * ```
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
  * @since 1.0
