@@ -38,7 +38,7 @@ to the require section of your composer.json.
 Usage
 -----
 
-Same sequences of the validation rules may repeat over the application many times. For example: you may have a set of
+The same sequence of the validation rules may repeat over the application many times. For example: you may have a set of
 restrictions related to the user's password, like it should be at least 8 symbols long, but shorter then 200 to fit the
 database field reserved for its storage. Your program may also allow user to upload an image to be his avatar, but in order
 to make it safe, you should validate uploaded file mime type and size.
@@ -66,7 +66,7 @@ class ProfileController extends Controller
 }
 ```
 
-The problem is validation for user's password or avatar may appear in several different places. For example: password
+The problem is: validation for user's password or avatar may appear in several different places. For example: password
 can be setup at sign-up process, during password reset and so on. You may also have a separated administration panel,
 which allows system administrator to adjust existing user's record or create a new one. Thus you will have to duplicate
 all these validation rules many times throughout your project source code. In case requirements change, for example:
@@ -129,7 +129,7 @@ class ProfileController extends Controller
 
 With such approach you can change validation for the 'password' and 'avatar' at the single place.
 
-In case composite validation rule fails validator instance will pick up an error message from the particular sub-rule.
+In case composite validation rule fails, validator instance will pick up an error message from the particular sub-rule.
 For example:
 
 ```php
