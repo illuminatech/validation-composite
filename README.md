@@ -2,7 +2,7 @@
     <a href="https://github.com/illuminatech" target="_blank">
         <img src="https://avatars1.githubusercontent.com/u/47185924" height="100px">
     </a>
-    <h1 align="center">Laravel Composite Validation Repository</h1>
+    <h1 align="center">Laravel Composite Validation</h1>
     <br>
 </p>
 

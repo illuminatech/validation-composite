@@ -81,4 +81,47 @@ class CompositeRuleTest extends TestCase
         $rule->setValidatorFactory($factory);
         $this->assertSame($factory, $rule->getValidatorFactory());
     }
+
+    /**
+     * Data provider for {@see testPassesArrayAttribute()}
+     *
+     * @return array test data.
+     */
+    public function dataProviderPassesArrayAttribute(): array
+    {
+        return [
+            // 'item_ids.*' => [new DynamicCompositeRule()],
+            ['item_ids.0', 20, true],
+            ['item_ids.0', 'some', false],
+            ['item_ids.1', 20, true],
+            ['item_ids.1', 'some', false],
+            // 'items.*.id' => [new DynamicCompositeRule()],
+            ['items.0.id', 20, true],
+            ['items.0.id', 'some', false],
+            ['items.1.id', 20, true],
+            ['items.1.id', 'some', false],
+        ];
+    }
+
+    /**
+     * @see https://github.com/illuminatech/validation-composite/issues/3
+     *
+     * @depends testPasses
+     *
+     * @dataProvider dataProviderPassesArrayAttribute
+     *
+     * @param  string  $attribute
+     * @param  mixed  $value
+     * @param  bool  $shouldPass
+     */
+    public function testPassesArrayAttribute(string $attribute, $value, bool $shouldPass)
+    {
+        $rule = new DynamicCompositeRule([
+            'integer',
+            'min:10',
+            'max:100',
+        ]);
+
+        $this->assertSame($shouldPass, $rule->passes($attribute, $value));
+    }
 }

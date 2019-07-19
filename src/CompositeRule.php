@@ -7,6 +7,7 @@
 
 namespace Illuminatech\Validation\Composite;
 
+use Illuminate\Support\Arr;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Contracts\Validation\Factory;
@@ -82,7 +83,11 @@ abstract class CompositeRule implements Rule
      */
     public function passes($attribute, $value): bool
     {
-        $validator = $this->getValidatorFactory()->make([$attribute => $value], [
+        $data = [];
+
+        Arr::set($data, $attribute, $value); // ensure correct validation for array attributes like 'item_ids.*' or 'items.*.id'
+
+        $validator = $this->getValidatorFactory()->make($data, [
             $attribute => $this->rules(),
         ]);
 
