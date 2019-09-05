@@ -10,8 +10,8 @@ This extension allows uniting several Laravel validation rules into a single one
 
 For license information check the [LICENSE](LICENSE.md)-file.
 
-[![Latest Stable Version](https://poser.pugx.org/illuminatech/validation-composite/v/stable.png)](https://packagist.org/packages/illuminatech/validation-composite)
-[![Total Downloads](https://poser.pugx.org/illuminatech/validation-composite/downloads.png)](https://packagist.org/packages/illuminatech/validation-composite)
+[![Latest Stable Version](https://img.shields.io/packagist/v/illuminatech/validation-composite.svg)](https://packagist.org/packages/illuminatech/validation-composite)
+[![Total Downloads](https://img.shields.io/packagist/dt/illuminatech/validation-composite.svg)](https://packagist.org/packages/illuminatech/validation-composite)
 [![Build Status](https://travis-ci.org/illuminatech/validation-composite.svg?branch=master)](https://travis-ci.org/illuminatech/validation-composite)
 
 
