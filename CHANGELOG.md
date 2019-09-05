@@ -1,6 +1,12 @@
 Laravel Composite Validation
 ============================
 
+1.1.0 Under Development
+-----------------------
+
+- Enh #4: Added support for "illuminate/support" 6.0 (klimov-paul)
+
+
 1.0.1, July 22, 2019
 --------------------
 

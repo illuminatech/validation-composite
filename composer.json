@@ -1,7 +1,7 @@
 {
     "name": "illuminatech/validation-composite",
     "description": "Allows uniting several validation rules into a single one for easy re-usage",
-    "keywords": ["laravel", "validation", "validator","rule", "composite", "combine"],
+    "keywords": ["laravel", "validation", "validator", "rule", "composite", "combine"],
     "license": "BSD-3-Clause",
     "support": {
         "issues": "https://github.com/illuminatech/validation-composite/issues",
@@ -15,10 +15,11 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.8"
+        "illuminate/support": "^6.0"
     },
     "require-dev": {
-        "illuminate/validation": "^5.8"
+        "illuminate/validation": "^6.0",
+        "phpunit/phpunit": "^7.5|^8.0"
     },
     "autoload": {
         "psr-4": {
