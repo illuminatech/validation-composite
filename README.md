@@ -153,7 +153,7 @@ if ($validator->fails()) {
 > Note: do not use rules like 'sometimes', 'required', 'required_with', 'required_without' and so on in the composite rule.
   These are processed at the different validation level and thus will have no effect or may behave unexpectedly. 
 
-You may define composite validation rules using [validation factory extensions](https://laravel.com/docs/5.8/validation#using-extensions) feature.
+You may define composite validation rules using [validation factory extensions](https://laravel.com/docs/6.0/validation#using-extensions) feature.
 For such case you may use `Illuminatech\Validation\Composite\DynamicCompositeRule`. For example:
 
 ```php
