@@ -2,12 +2,12 @@
 
 namespace Illuminatech\Validation\Composite\Test;
 
-use Illuminate\Validation\Factory;
 use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Translation\FileLoader;
 use Illuminate\Translation\Translator;
+use Illuminate\Validation\Factory;
 
 /**
  * Base class for the test cases.

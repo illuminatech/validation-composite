@@ -7,10 +7,10 @@
 
 namespace Illuminatech\Validation\Composite;
 
-use Illuminate\Support\Arr;
-use Illuminate\Contracts\Validation\Rule;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Contracts\Validation\Factory;
+use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * CompositeRule allows uniting several validation rules into a single one for easy re-usage.
