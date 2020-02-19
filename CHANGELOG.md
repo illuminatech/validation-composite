@@ -1,8 +1,8 @@
 Laravel Composite Validation
 ============================
 
-1.2.0 Under Development
------------------------
+1.2.0, February 19, 2020
+------------------------
 
 - Enh #6: Added `CompositeRule::messages()`, for the custom validation messages specification (klimov-paul)
 

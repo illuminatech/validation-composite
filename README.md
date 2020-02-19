@@ -161,8 +161,8 @@ For such case you may use `Illuminatech\Validation\Composite\DynamicCompositeRul
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Validation\Factory;
+use Illuminate\Support\ServiceProvider;
 use Illuminatech\Validation\Composite\DynamicCompositeRule;
 
 class AppServiceProvider extends ServiceProvider
