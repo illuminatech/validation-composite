@@ -57,14 +57,21 @@ class DynamicCompositeRule extends CompositeRule
     private $rules;
 
     /**
+     * @var array custom error messages for the validation rules.
+     */
+    private $messages;
+
+    /**
      * Constructor.
      *
      * @param  array  $rules list of the validation rules, which should be combined into this one.
+     * @param  array  $messages custom error messages for the validation rules.
      * @param \Illuminate\Contracts\Validation\Factory|null $validatorFactory validator factory used for slave validator creation.
      */
-    public function __construct(array $rules, ?Factory $validatorFactory = null)
+    public function __construct(array $rules, array $messages = [], ?Factory $validatorFactory = null)
     {
         $this->rules = $rules;
+        $this->messages = $messages;
 
         parent::__construct($validatorFactory);
     }
@@ -75,5 +82,13 @@ class DynamicCompositeRule extends CompositeRule
     protected function rules(): array
     {
         return $this->rules;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function messages(): array
+    {
+        return $this->messages;
     }
 }

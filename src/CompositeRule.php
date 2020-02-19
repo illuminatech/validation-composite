@@ -79,6 +79,17 @@ abstract class CompositeRule implements Rule
     abstract protected function rules(): array;
 
     /**
+     * Defines custom error messages for the validation rules defined at {@see rules()}.
+     * @since 1.2.0
+     *
+     * @return array error messages.
+     */
+    protected function messages(): array
+    {
+        return [];
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function passes($attribute, $value): bool
@@ -87,9 +98,13 @@ abstract class CompositeRule implements Rule
 
         Arr::set($data, $attribute, $value); // ensure correct validation for array attributes like 'item_ids.*' or 'items.*.id'
 
-        $validator = $this->getValidatorFactory()->make($data, [
-            $attribute => $this->rules(),
-        ]);
+        $validator = $this->getValidatorFactory()->make(
+            $data,
+            [
+                $attribute => $this->rules(),
+            ],
+            $this->messages()
+        );
 
         if ($validator->fails()) {
             $this->message = $validator->getMessageBag()->first();

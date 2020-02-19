@@ -153,7 +153,7 @@ if ($validator->fails()) {
 > Note: do not use rules like 'sometimes', 'required', 'required_with', 'required_without' and so on in the composite rule.
   These are processed at the different validation level and thus will have no effect or may behave unexpectedly. 
 
-You may define composite validation rules using [validation factory extensions](https://laravel.com/docs/6.0/validation#using-extensions) feature.
+You may define composite validation rules using [validation factory extensions](https://laravel.com/docs/validation#using-extensions) feature.
 For such case you may use `Illuminatech\Validation\Composite\DynamicCompositeRule`. For example:
 
 ```php
@@ -188,3 +188,31 @@ class AppServiceProvider extends ServiceProvider
 
 Note that with such approach automatic pick up of the validation error message becomes impossible, and you will have to setup
 it explicitly in language files.
+
+You may specify [custom error messages](https://laravel.com/docs/validation#custom-error-messages) per each validation rule used in the composite one,
+overriding `messages()` method. For example:
+
+```php
+<?php
+
+namespace App\Rules;
+
+use Illuminatech\Validation\Composite\CompositeRule;
+
+class PasswordRule extends CompositeRule
+{
+    protected function rules(): array
+    {
+        return ['string', 'min:8', 'max:200'];
+    }
+
+    protected function messages(): array
+    {
+        return [
+            'string' => 'Only string is allowed.',
+            'min' => ':attribute is too short.',
+            'max' => ':attribute is too long.',
+        ];
+    }
+}
+```

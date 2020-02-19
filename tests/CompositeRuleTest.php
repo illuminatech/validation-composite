@@ -72,6 +72,46 @@ class CompositeRuleTest extends TestCase
         $this->assertSame($expectedMessage, $rule->message());
     }
 
+    /**
+     * Data provider for {@see testPickupMessage()}
+     *
+     * @return array test data.
+     */
+    public function dataProviderPickupCustomMessage(): array
+    {
+        return [
+            ['some', 'custom.integer'],
+            [-10, 'custom.min.numeric'],
+            [200, 'custom.max.numeric'],
+        ];
+    }
+
+    /**
+     * @dataProvider dataProviderPickupCustomMessage
+     *
+     * @param  mixed  $value
+     * @param  string  $expectedMessage
+     */
+    public function testPickupCustomMessage($value, string $expectedMessage)
+    {
+        $rule = new DynamicCompositeRule(
+            [
+                'integer',
+                'min:10',
+                'max:100',
+            ],
+            [
+                'integer' => 'custom.integer',
+                'min' => 'custom.min.numeric',
+                'max' => 'custom.max.numeric',
+            ]
+        );
+
+        $rule->passes('foo', $value);
+
+        $this->assertSame($expectedMessage, $rule->message());
+    }
+
     public function testSetupFactory()
     {
         $rule = new DynamicCompositeRule([]);
