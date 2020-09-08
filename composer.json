@@ -15,10 +15,10 @@
         }
     ],
     "require": {
-        "illuminate/support": "^6.0 || ^7.0"
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0"
     },
     "require-dev": {
-        "illuminate/validation": "^6.0 || ^7.0",
+        "illuminate/validation": "^6.0 || ^7.0 || ^8.0",
         "phpunit/phpunit": "^7.5 || ^8.0"
     },
     "autoload": {
