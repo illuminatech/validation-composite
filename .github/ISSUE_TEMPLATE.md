@@ -9,6 +9,6 @@
 | Q                         | A
 | ------------------------- | ---
 | This Package Version      | 1.?.?
-| Laravel Framework Version | 7.?.?
+| Laravel Framework Version | 8.?.?
 | PHP version               | 
 | Operating system          |
