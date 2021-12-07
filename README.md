@@ -12,7 +12,7 @@ For license information check the [LICENSE](LICENSE.md)-file.
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/illuminatech/validation-composite.svg)](https://packagist.org/packages/illuminatech/validation-composite)
 [![Total Downloads](https://img.shields.io/packagist/dt/illuminatech/validation-composite.svg)](https://packagist.org/packages/illuminatech/validation-composite)
-[![Build Status](https://travis-ci.org/illuminatech/validation-composite.svg?branch=master)](https://travis-ci.org/illuminatech/validation-composite)
+[![Build Status](https://github.com/illuminatech/validation-composite/workflows/build/badge.svg)](https://github.com/illuminatech/validation-composite/actions)
 
 
 Installation
