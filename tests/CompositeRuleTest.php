@@ -12,7 +12,7 @@ class CompositeRuleTest extends TestCase
      *
      * @return array test data.
      */
-    public function dataProviderPasses(): array
+    public static function dataProviderPasses(): array
     {
         return [
             [20, true],
@@ -44,7 +44,7 @@ class CompositeRuleTest extends TestCase
      *
      * @return array test data.
      */
-    public function dataProviderPickupMessage(): array
+    public static function dataProviderPickupMessage(): array
     {
         return [
             ['some', 'validation.integer'],
@@ -77,7 +77,7 @@ class CompositeRuleTest extends TestCase
      *
      * @return array test data.
      */
-    public function dataProviderPickupCustomMessage(): array
+    public static function dataProviderPickupCustomMessage(): array
     {
         return [
             ['some', 'custom.integer'],
@@ -127,7 +127,7 @@ class CompositeRuleTest extends TestCase
      *
      * @return array test data.
      */
-    public function dataProviderPassesArrayAttribute(): array
+    public static function dataProviderPassesArrayAttribute(): array
     {
         return [
             // 'item_ids.*' => [new DynamicCompositeRule()],

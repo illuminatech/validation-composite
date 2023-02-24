@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <phpunit bootstrap="vendor/autoload.php"
-		colors="true"
-		verbose="true"
-		convertErrorsToExceptions="true"
-		convertNoticesToExceptions="true"
-		convertWarningsToExceptions="true"
-		stopOnFailure="false">
-		<testsuites>
-			<testsuite name="Illuminatech Test Suite">
-				<directory>./tests</directory>
-			</testsuite>
-		</testsuites>
+		 colors="true"
+		 backupGlobals="false"
+		 backupStaticProperties="false"
+		 processIsolation="false"
+		 cacheDirectory=".phpunit.cache"
+		 stopOnError="false"
+		 stopOnFailure="false">
+	<testsuites>
+		<testsuite name="Illuminatech Test Suite">
+			<directory>./tests</directory>
+		</testsuite>
+	</testsuites>
 </phpunit>
