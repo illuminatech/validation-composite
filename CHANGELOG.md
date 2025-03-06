@@ -1,8 +1,8 @@
 Laravel Composite Validation
 ============================
 
-1.2.5 Under Development
------------------------
+1.2.6, March 6, 2025
+--------------------
 
 - Enh #12: Added support for "illuminate/support" 12.0 (klimov-paul)
 
