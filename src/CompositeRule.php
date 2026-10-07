@@ -57,7 +57,7 @@ abstract class CompositeRule implements Rule
     /**
      * @var string validation error message from particular underlying validator.
      */
-    private $message;
+    private $message = '';
 
     /**
      * Constructor.
@@ -117,6 +117,8 @@ abstract class CompositeRule implements Rule
 
     /**
      * {@inheritdoc}
+     *
+     * @return string
      */
     public function message()
     {
